@@ -30,10 +30,11 @@
 #### Modify the command from Task 5 to save the downloaded file with a timestamped name in the format YYYYmmdd_HHMMSS.json.
 #### Steps: type wget -O data/weather/`date +"%Y%m%d_%H%M%S.json"` https://prodapi.metweb.ie/observations/athenry/today
 #### Explanation: wget is a command-line utility used for downloading files from web. -O weather.json is option tells wget to save downloaded content to file in specific directory. https://prodapi.metweb.ie/observations/athenry/today is URL from which data is being downloaded.
-wget -O data/timestamps/`date +"%Y%m%d_%H%M%S.json"` https://prodapi.metweb.ie/observations/athenry/today
+
 
 ### Task 7: Write the Script
 #### Write a bash script called weather.sh in the root of your repository. This script should automate the process from Task 6, saving the weather data to the data/weather directory. Make the script executable and test it by running it.
+#### Steps: 1) create bash script called weather.sh in repository weather.sh 2) type #! /bin/bash 3) in next line type: wget -O data/weather/`date +"%Y%m%d_%H%M%S.json"` https://prodapi.metweb.ie/observations/athenry/today 4) type for testing: ./weather.sh
 
 ### Task 8: Notebook
 #### Create a notebook called weather.ipynb at the root of your repository. In this notebook, write a brief report explaining how you completed Tasks 1 to 7. Provide short descriptions of the commands used in each task and explain their role in completing the tasks.
