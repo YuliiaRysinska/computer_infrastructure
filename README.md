@@ -1,6 +1,9 @@
 ## computer_infrastructure - the repository of Yuliia Rysinska's assessment (G00438897@atu.ie)
 
-#### The purpose of the assessment to demonstrate ability in the following: Use, configure, and script in a command line interface environment. Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures. Select appropriate infrastructure for a given computational task.
+#### The purpose of the assessment to demonstrate ability in the following: 
+# - Use, configure, and script in a command line interface environment
+# - Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures
+# - Select appropriate infrastructure for a given computational task.
 -----------------------------------------
 ### Task 1: Create Directory Structure
 #### Using the command line, create a directory (that is, a folder) named data at the root of your repository. Inside data, create two subdirectories: timestamps and weather.
@@ -13,16 +16,18 @@
 -----------------------------------------------
 ### Task 3: Formatting Timestamps
 #### Run the date command again, but this time format the output using YYYYmmdd_HHMMSS (e.g., 20261114_130003 for 1:00:03 PM on November 14, 2026). Refer to the date man page (using man date) for more formatting options. (Press q to exit the man page). Append the formatted output to a file named formatted.txt.
-#### ACTION: Run the date command with formatting: date -d "2026-11-14 13:00:03" +"%Y%m%d_%H%M%S" >> formatted.txt
+#### Steps: Run the date command with formatting: date -d "2026-11-14 13:00:03" +"%Y%m%d_%H%M%S" >> formatted.txt
 #### Explanation: -d "2026-11-14 13:00:03" specifies the exact date and time. +"%Y%m%d_%H%M%S" formats the date as YYYYmmdd_HHMMSS. >> formatted.txt appends the output to formatted.txt.
 -------------------------------------------
 ### Task 4: Create Timestamped Files
 #### Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ` into the touch command. You should no longer use redirection (>>) in this step.
 #### Steps:put comand in command line: touch `date +"%Y%m%d_%H%M%S"`.txt
-#### Explanation: "`date +"%Y%m%d_%H%M%S"`" is executes date command with specified format and returns date string in YYYYmmdd_HHMMSS format. "touch" is command creates an empty file with name output by the date command.
+#### Explanation: "data/weather/`date +"%Y%m%d_%H%M%S"`" is executes date command with specified format and specific folder and returns date string in YYYYmmdd_HHMMSS format. "touch" is command creates an empty file with name output by the date command.
 -------------------------
 ### Task 5: Download Today's Weather Data
 #### Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann using wget. Use the -O <filename> option to save the file as weather.json. The data can be found at this URL: https://prodapi.metweb.ie/observations/athenry/today.
+#### Steps: type wget -O data/weather/`date +"%Y%m%d_%H%M%S_weather.json"` https://prodapi.metweb.ie/observations/athenry/today
+#### Explanation: wget is a command-line utility used for downloading files from the web. -O weather.json is option tells wget to save the downloaded content to file named weather.json in specific directory. https://prodapi.metweb.ie/observations/athenry/today is the URL from which data is being downloaded.
 
 ### Task 6: Timestamp the Data
 #### Modify the command from Task 5 to save the downloaded file with a timestamped name in the format YYYYmmdd_HHMMSS.json.
