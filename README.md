@@ -1,9 +1,6 @@
 ## computer_infrastructure - the repository of Yuliia Rysinska's assessment (G00438897@atu.ie)
 
-#### The purpose of the assessment to demonstrate ability in the following: 
-# - Use, configure, and script in a command line interface environment
-# - Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures
-# - Select appropriate infrastructure for a given computational task.
+#### The purpose of the assessment to demonstrate ability in the following: Use, configure, and script in a command line interface environment; Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures; Select appropriate infrastructure for a given computational task.
 -----------------------------------------
 ### Task 1: Create Directory Structure
 #### Using the command line, create a directory (that is, a folder) named data at the root of your repository. Inside data, create two subdirectories: timestamps and weather.
@@ -21,16 +18,19 @@
 -------------------------------------------
 ### Task 4: Create Timestamped Files
 #### Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ` into the touch command. You should no longer use redirection (>>) in this step.
-#### Steps:put comand in command line: touch `date +"%Y%m%d_%H%M%S"`.txt
+#### Steps: put comand in command line: touch `date +"%Y%m%d_%H%M%S"`.txt
 #### Explanation: "data/weather/`date +"%Y%m%d_%H%M%S"`" is executes date command with specified format and specific folder and returns date string in YYYYmmdd_HHMMSS format. "touch" is command creates an empty file with name output by the date command.
 -------------------------
 ### Task 5: Download Today's Weather Data
 #### Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann using wget. Use the -O <filename> option to save the file as weather.json. The data can be found at this URL: https://prodapi.metweb.ie/observations/athenry/today.
-#### Steps: type wget -O data/weather/`date +"%Y%m%d_%H%M%S_weather.json"` https://prodapi.metweb.ie/observations/athenry/today
-#### Explanation: wget is a command-line utility used for downloading files from the web. -O weather.json is option tells wget to save the downloaded content to file named weather.json in specific directory. https://prodapi.metweb.ie/observations/athenry/today is the URL from which data is being downloaded.
+#### Steps: 1)choose directory cd data/weather, 2)type in command line wget -O weather.json https://prodapi.metweb.ie/observations/athenry/today
+#### Explanation: wget is a command-line utility used for downloading files from web. -O weather.json is option tells wget to save the downloaded content to file named weather.json. https://prodapi.metweb.ie/observations/athenry/today is the URL from which data is being downloaded.
 
 ### Task 6: Timestamp the Data
 #### Modify the command from Task 5 to save the downloaded file with a timestamped name in the format YYYYmmdd_HHMMSS.json.
+#### Steps: type wget -O data/weather/`date +"%Y%m%d_%H%M%S.json"` https://prodapi.metweb.ie/observations/athenry/today
+#### Explanation: wget is a command-line utility used for downloading files from web. -O weather.json is option tells wget to save downloaded content to file in specific directory. https://prodapi.metweb.ie/observations/athenry/today is URL from which data is being downloaded.
+wget -O data/timestamps/`date +"%Y%m%d_%H%M%S.json"` https://prodapi.metweb.ie/observations/athenry/today
 
 ### Task 7: Write the Script
 #### Write a bash script called weather.sh in the root of your repository. This script should automate the process from Task 6, saving the weather data to the data/weather directory. Make the script executable and test it by running it.
