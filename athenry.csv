@@ -1,0 +1,12 @@
+Time,Report,"Temperature ºC","Wind Speed km/h","Wind Gust km/h","Wind Direction º","Rainfall mm/h","Pressure hPa"
+00:00,"""Light rain """,8,6,0,315," 0.01 ",1014
+01:00,"""Recent Drizzle """,8,6,0,0," 0.1 ",1014
+02:00,"""Rain shower""",7,4,0,315," 0.01 ",1014
+03:00,"""Recent Rain""",7,2,0,0," 0.01 ",1014
+04:00,"""Mist""",7,2,0,180," 0.0 ",1013
+05:00,"""Recent Drizzle """,7,4,0,90," 0.01 ",1013
+06:00,"""Moderate Drizzle """,7,7,0,90," 0.1 ",1013
+07:00,"""Light rain """,7,6,0,90," 0.7 ",1013
+08:00,"""Light rain """,7,9,0,90," 0.7 ",1012
+09:00,"""Light rain """,6,13,0,90," 0.7 ",1011
+10:00,"""Light rain """,6,15,0,90," 1.1 ",1010
