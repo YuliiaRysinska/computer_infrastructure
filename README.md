@@ -1,6 +1,6 @@
-## computer_infrastructure - the repository of Yuliia Rysinska (G00438897@atu.ie). Consist of 9 tasks and project with all knowledge what accived in studying at ATU, course computer_infrastructure, lecturer Ian McLoughlin.
+## computer_infrastructure - the repository of Yuliia Rysinska (G00438897@atu.ie). Consists of 9 tasks and project with all knowledge achieved in studying at ATU, course 'Computer infrastructure', lecturer Ian McLoughlin.
 
-#### The purpose of the assessment to demonstrate ability in the following: Use, configure, and script in a command line interface environment; Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures; Select appropriate infrastructure for a given computational task.
+#### The purpose of the assessment is to demonstrate ability in the following: Use, configure, and script in a command line interface environment; Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures; Select appropriate infrastructure for a given computational task.
 
 ### Task 1: Create Directory Structure
 #### Using the command line, create a directory (that is, a folder) named data at the root of your repository. Inside data, create two subdirectories: timestamps and weather.
@@ -12,7 +12,7 @@
 #### Run the date command again, but this time format the output using YYYYmmdd_HHMMSS (e.g., 20261114_130003 for 1:00:03 PM on November 14, 2026). Refer to the date man page (using man date) for more formatting options. (Press q to exit the man page). Append the formatted output to a file named formatted.txt.
 
 ### Task 4: Create Timestamped Files
-#### Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ` into the touch command. You should no longer use redirection (>>) in this step.
+#### Use the touch command to create an empty file with a name in the YYYYmmdd_HHMMSS.txt format. You can achieve this by embedding your date command in backticks ' into the touch command. You should no longer use redirection (>>) in this step.
 
 ### Task 5: Download Today's Weather Data
 #### Change to the data/weather directory. Download the latest weather data for the Athenry weather station from Met Eireann using wget. Use the -O <filename> option to save the file as weather.json. The data can be found at this URL: https://prodapi.metweb.ie/observations/athenry/today.
