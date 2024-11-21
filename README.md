@@ -1,5 +1,5 @@
 # computer_infrastructure: 
-#### is the repository of Yuliia Rysinska (G00438897@atu.ie). Consists of 9 tasks and project with all knowledge achieved in studying at ATU, course 'Computer infrastructure', lecturer Ian McLoughlin.
+#### is the repository consists 9 tasks and project with all knowledge achieved in studying at ATU, course 'Computer infrastructure', lecturer Ian McLoughlin https://github.com/ianmcloughlin/2425_computer_infrastructure.
 
 ## Purpose of the assessment:
 #### is to demonstrate ability in the following: use, configure, and script in a command line interface environment; Manipulate and move data and code using the command line. Compare commonly available software infrastructures and architectures; Select appropriate infrastructure for a given computational task.
@@ -31,7 +31,7 @@
 ## Task 9: pandas
 #### In your weather.ipynb notebook, use the pandas function read_json() to load in any one of the weather data files you have downloaded with your script. Examine and summarize the data. Use the information provided data.gov.ie to write a short explanation of what the data set contains.
 
-## Project
+# Project
 #### In this project automated  weather.sh script to run daily and push the new data to repository. The following steps will create the necessary GitHub Actions workflow.
 
 #### 1.Create a GitHub Actions Workflow: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
