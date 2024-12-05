@@ -1,26 +1,31 @@
-name: Weather Data Workflow
+name: Weather Data Automation
 
 on:
-  # Schedule the workflow to run daily at 10 AM UTC
   schedule:
+    # Runs every day at 10 AM UTC (adjust for your time zone if needed)
     - cron: '0 10 * * *'
-  # Allow manual triggering of the workflow
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  fetch-weather-data:
-    runs-on: ubuntu-latest
+  update-weather:
+    runs-on: ubuntu-latest # Linux virtual machine
 
     steps:
-      # Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v3 # Clones the repository
 
-      # Example step to fetch weather data
-      # Replace this with your actual script or action
-      - name: Fetch Weather Data
-        run: |
-          echo "Fetching weather data..."
-          # Insert your script here, e.g., using curl or another tool
-          # Example: curl -X GET "https://api.weather.com/v3/..."
-          
+    - name: Run weather.sh Script
+      run: ./weather.sh # Ensure this script has executable permissions (chmod +x)
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Commit and Push Changes
+      run: |
+        git add .
+        git commit -m "Update weather data [skip ci]" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Auth token for push access
