@@ -36,15 +36,16 @@
 
 #### 1.Create a GitHub Actions Workflow: In your repository, create a folder called .github/workflows/ (if it doesn't already exist). Inside this folder, create a file called weather-data.yml. This file will define the GitHub Actions workflow.
 
-#### 2.Run Daily at 10am: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow.
+#### 2.Run Daily at 10am: Use the schedule event with cron to set the script to run once a day at 10am. Include also the workflow_dispatch event so you can test the workflow. Using command cron: '0 10 * * *'
 
-#### 3.Use a Linux Virtual Machine In the workflow file, specify that a Ubuntu virtual machine should be used to run the action.
+#### 3.Use a Linux Virtual Machine In the workflow file, specify that a Ubuntu virtual machine should be used to run the action. Using command runs-on: ubuntu-latest (Specifies an Ubuntu VM).
 
-#### 4.Clone the Repository Have the workflow clone your repository.
+#### 4.Clone the Repository Have the workflow clone your repository. Using command uses: actions/checkout@v3.
 
-#### 5.Execute the weather.sh Script Add a step that runs your weather.sh script.
+#### 5.Execute the weather.sh Script Add a step that runs your weather.sh script.Using command run: ./weather.sh
 
 #### 6.Commit and Push Changes Back to the Repository Finally, configure the workflow to commit the new weather data and push those changes back to your repository.
 
 #### 7.Test the Workflow Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
+
 
