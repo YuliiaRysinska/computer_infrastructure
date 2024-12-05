@@ -48,4 +48,7 @@
 
 #### 7.Test the Workflow Commit and push the workflow to your repository. Check the logs in GitHub to ensure that the weather.sh script runs correctly, that new data is being committed.
 
+## Reffence: 
+#### https://github.com/ianmcloughlin/2425_computer_infrastructure
+#### https://docs.github.com/en/actions
 
