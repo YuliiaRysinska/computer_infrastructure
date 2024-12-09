@@ -1,32 +1,22 @@
-name: Daily Weather Data Update
+name: Weather Data Update
 
 on:
   schedule:
-    # Runs daily at 10:00 AM UTC
+    # Runs at 10am UTC daily
     - cron: '0 10 * * *'
-  workflow_dispatch:
-    # Allows manual triggering of the workflow
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
-  update-weather:
-    runs-on: ubuntu-latest
+  weather_data:
+    runs-on: ubuntu-latest # Use a Linux (Ubuntu) virtual machine
 
     steps:
-      # Step 1: Check out the repository
-      - name: Clone Repository
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       # Step 2: Run the weather.sh script
-      - name: Execute weather.sh
+      - name: Run Weather Script
         run: |
-          chmod +x weather.sh
+          chmod +x weather.sh # Ensure script is executable
           ./weather.sh
-
-      # Step 3: Commit and push changes
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Update weather data"
-          git push
